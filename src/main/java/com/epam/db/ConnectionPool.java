@@ -35,7 +35,7 @@ public class ConnectionPool {
                 availableConnection.add(connectionProxy);
             }
              catch (SQLException e) {
-                 System.out.println("SQL Exception occured" + e);
+                 System.out.println("SQL Exception occurred" + e);
             }
         }
     }
@@ -51,7 +51,7 @@ public class ConnectionPool {
             try {
                 availableConnection.add(connection);
             } catch (Exception e) {
-                System.out.println("Exeption" + e);
+                System.out.println("Exception" + e);
             }
     }
 

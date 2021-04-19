@@ -9,6 +9,16 @@ public class Account {
     public Account() {
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     Account(long id, String login, String email, String password) {
         this.id = id;
         this.login = login;

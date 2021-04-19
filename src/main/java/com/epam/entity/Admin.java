@@ -2,6 +2,11 @@ package com.epam.entity;
 
 public class Admin extends Account{
 
+    @Override
+    public String toString() {
+        return "Admin{} " + super.toString();
+    }
+
     public Admin() {
     }
 
