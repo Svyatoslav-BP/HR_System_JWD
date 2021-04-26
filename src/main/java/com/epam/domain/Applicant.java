@@ -1,6 +1,7 @@
-package com.epam.entity;
+package com.epam.domain;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class Applicant extends Account{
@@ -44,5 +45,19 @@ private Set<VacancyRequest> vacancyRequests;
         this.resume = resume;
         this.skillSet = skillSet;
         this.vacancyRequests = vacancyRequests;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Applicant applicant = (Applicant) o;
+        return Objects.equals(resume, applicant.resume) && Objects.equals(skillSet, applicant.skillSet) && Objects.equals(vacancyRequests, applicant.vacancyRequests);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), resume, skillSet, vacancyRequests);
     }
 }

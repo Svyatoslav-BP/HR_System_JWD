@@ -1,4 +1,4 @@
-package com.epam.entity;
+package com.epam.domain;
 
 public class Admin extends Account{
 
@@ -13,4 +13,6 @@ public class Admin extends Account{
     public Admin(long id, String login, String email, String password) {
         super(id, login, email, password);
     }
+
+
 }

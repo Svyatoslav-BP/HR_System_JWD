@@ -1,4 +1,4 @@
-package com.epam.entity;
+package com.epam.domain;
 
 public enum Skill {
     JAVA_DEV,

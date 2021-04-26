@@ -1,4 +1,6 @@
-package com.epam.entity;
+package com.epam.domain;
+
+import java.util.Objects;
 
 public class VacancyRequest {
     private long id;
@@ -6,6 +8,9 @@ public class VacancyRequest {
     private Applicant applicant;
     private Vacancy vacancy;
     private String coveringLetter;
+
+    public VacancyRequest() {
+    }
 
     public long getId() {
         return id;
@@ -47,6 +52,16 @@ public class VacancyRequest {
         this.coveringLetter = coveringLetter;
     }
 
-    public VacancyRequest() {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VacancyRequest that = (VacancyRequest) o;
+        return id == that.id && answer == that.answer && Objects.equals(applicant, that.applicant) && Objects.equals(vacancy, that.vacancy) && Objects.equals(coveringLetter, that.coveringLetter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, answer, applicant, vacancy, coveringLetter);
     }
 }

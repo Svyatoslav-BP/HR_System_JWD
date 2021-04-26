@@ -1,4 +1,6 @@
-package com.epam.entity;
+package com.epam.domain;
+
+import java.util.Objects;
 
 public class Account {
     private long id;
@@ -59,4 +61,16 @@ public class Account {
         return password;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return id == account.id && login.equals(account.login) && Objects.equals(email, account.email) && Objects.equals(password, account.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, login, email, password);
+    }
 }
